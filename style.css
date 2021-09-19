@@ -2,50 +2,46 @@
 
 body {
   font-family: "Lato", sans-serif;
-  display: grid;
+}
+
+div.logo {
+	font-family: "cereal"
 }
 
 h2 {
-  font-size: 26px;
-  font-weight: 400;
-  margin: 0 10px 10px 10px;
-  text-align: center;
+	font-size: 42px;
+	font-weight: 400;
+	margin: 0 10px 10px 10px;
+	text-align: center;
 }
 
 h3 {
-  font-size: 18px;
-  font-weight: 500;
+	font-size: 24px;
 }
 
 p {
-  line-height: 1.5em;
-  margin: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
+	line-height: 1.5em;
+	margin: 0;
+	font-size: 19px;
+}
+
+li {
+	font-size: 19px;
 }
 
 section {
-  padding: 20px;
+	padding: 20px;
 }
 
 section.alternate-background {
-  background-color: #00a699;
-  color: #fff;
+	background-color: #00a699;
+	color: #fff;
 }
 
 main img {
-  width: 100%;
+	width: 100%;
 }
 
-.about-img {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.host-img {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
 
 /* ---  Groups & Items --- */
 
@@ -56,78 +52,93 @@ main img {
 
 .item {
   flex: 1;
-  margin: 10px;
+  margin:10px;
 }
 
 .item-double {
   flex: 2;
-  margin: 10px;
 }
 
 /* -------  Navigation ------- */
-
 header {
+  flex-direction: row;
   background-color: #ff385c;
-  padding: 30px 30px 0 20px;
-  text-align: center;
+  padding: 20px 20px 20px 20px;
+  /* text-align: center;
+  flex-wrap: wrap; */
 }
 
-.logo {
-  display: flex;
-  font-family: "Pangolin", cursive;
-  font-size: 64px;
-  color: #fff;
-  justify-content: center;
+header nav {
+	display: flex;
+	justify-content: center;
 }
 
 header nav ul {
+	display: flex;
+	padding-left: 0;
+	list-style: none;
+}
+
+.logo {
+	font-family: "Pangolin", cursive;
+	font-size: 60px;
+	color: #fff;
   display: flex;
   justify-content: center;
-  text-decoration: none;
 }
 
 header nav ul li {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 header nav ul li a {
-  color: #fff;
-  padding: 0 20px 0 0;
-  text-decoration: none;
+	color: #fff;
+	text-decoration: none;
+	padding: 0 20px 0 0;
 }
 
 header nav ul li a:hover {
-  color: #bdbdbd;
-  text-decoration: none;
+	color: #bdbdbd;
+	text-decoration: none;
 }
 
 /* -------  Search Form ------- */
-
 form {
-  display: flex;
+	border: 2px solid #ff385c;
+	padding: 10px;
+	display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 2px solid #ff385c;
-  padding: 10px;
+}
+
+form div {
+	display: flex;
+}
+
+form div label {
+	flex: 1;
 }
 
 form label {
-  font-weight: bold;
-  padding-right: 10px;
+	font-weight: bold;
+}
+
+form select,
+form input {
+	margin-bottom: 20px;
+	width: 180px;
 }
 
 form button {
-  background-color: #ff385c;
-  border: none;
-  color: #fff;
-  font-size: 24px;
-  padding: 15px;
-  width: 100%;
+	background-color: #ff385c;
+	border: none;
+	color: #fff;
+	font-size: 24px;
 }
 
-.form-input {
-  display: flex;
-  justify-content: space-between;
+main form {
+	text-align: left;
+	padding: 20px;
 }
 
 /* -------  Footer ------- */
@@ -142,88 +153,57 @@ footer p {
   padding: 20px;
 }
 
-
-/* ------- * --------- * ------- */
-
 /* -------  Media Query ------- */
-
-/* ------- * --------- * ------- */
-
-
-/* -------  General Styles ------- */
 
 @media all and (min-width: 480px) {
   header {
+    background-color: #ff385c;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 15px;
-  }
-  
-  .logo {
-    font-size: 48px;
-    padding-left: 5px;
   }
 
-  /* -------  Search Form ------- */
+  header nav {
+    padding: 10px;
+  }
 
   form {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px 10px 10px 10px;
+    flex-direction: row;
   }
 
-  form div {
+  .group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  .vacation-form .item {
     display: flex;
     flex-direction: column;
   }
 
-  form label {
-    padding-bottom: 15px;
-    font-weight: bold;
-  }
-
-  .form-input {
-    padding-right: 15px;
-    justify-content: center;
-  }
-
-  button {
-    justify-content: center;
-  }
-
-  /* -------  Groups & Items------- */
-
-  .group {
-    align-items: center;
+  .item label, .item input, .item select, .item button {
     display: flex;
-    justify-content: center;
+    width: 100%
+  }
+
+  .item button {
+    display: table-cell;
+  }
+
+  .column {
+    display: flex;
+    flex: 1;
+    flex-direction: column; 
+    margin: 10px;
+  }
+
+  .gridrow {
+    display: flex;
+    flex: 1;
     flex-direction: row;
   }
-
-  .item button,
-  .item input,
-  .item label,
-  .item select {
-    display: flex;
-    width: 100%;
-  }
-
-  .item {
-    flex: 1;
-    margin: 15px;
-  }
-
-  .item-double {
-    flex: 2;
-    margin: 15px;
-  }
-
-  p {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+}

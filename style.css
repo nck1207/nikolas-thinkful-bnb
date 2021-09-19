@@ -130,10 +130,13 @@ form input {
 }
 
 form button {
-	background-color: #ff385c;
-	border: none;
-	color: #fff;
-	font-size: 24px;
+  background-color: #ff385c;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 15px;
+  width: 100%;
+  justify-content: center;
 }
 
 main form {
